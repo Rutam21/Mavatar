@@ -6,7 +6,6 @@ function handleAvatar(event) {
   const countDiv = document.getElementById("count");
   let image;
 
-  console.log(inputText);
   // Clear the input field
   document.getElementById("avatarInput").value = "";
   document.getElementById("avatarDiv").style.display = "none";
@@ -47,7 +46,6 @@ function handleAvatar(event) {
         }
 
         // Display the avatar
-        console.log(data.avatar);
         image = data.avatar;
         resultDiv.src = image;
         document.getElementById("avatarDiv").style.display = "flex";

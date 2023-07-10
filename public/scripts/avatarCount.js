@@ -8,6 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
       countDiv.innerText = data.avatarGenerations;
     })
     .catch((error) => {
-      console.error("Error fetching avatar count:", error);
+      logger.error("Error fetching avatar count:", error);
     });
 });

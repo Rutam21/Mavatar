@@ -325,7 +325,6 @@
   align-self: center;
   align-items: center;
   flex-direction: column;
-  margin-top: 100px;
 }
 .home-character {
   flex: 0 0 auto;
@@ -1393,7 +1392,7 @@
   }
   .home-button3 {
     width: auto;
-    height: var(--dl-size-size-small);
+    height: auto;
   }
   .home-collection {
     gap: var(--dl-space-space-fourunits);

@@ -22,7 +22,6 @@ async function generateAvatar(inputText, type) {
     try {
       const escapedDescription = inputText.replace(/"/g, "");
       const text = `SELECT img_url FROM ${avatarModelName} WHERE description="${escapedDescription}" AND type="${type}"`;
-      console.log(text);
       const avatarResponse = await MindsDB.SQL.runQuery(text);
       if (!avatarResponse.rows || avatarResponse.rows.length === 0) {
         throw new Error("Invalid response from MindsDB");
