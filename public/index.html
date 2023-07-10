@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Mavatar</title>
+    <meta property="og:title" content="Mavatar" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+
+    <style data-tag="reset-style-sheet">
+      html {
+        line-height: 1.15;
+      }
+      body {
+        margin: 0;
+      }
+      * {
+        box-sizing: border-box;
+        border-width: 0;
+        border-style: solid;
+      }
+      p,
+      li,
+      ul,
+      pre,
+      div,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      figure,
+      blockquote,
+      figcaption {
+        margin: 0;
+        padding: 0;
+      }
+      button {
+        background-color: transparent;
+      }
+      button,
+      input,
+      optgroup,
+      select,
+      textarea {
+        font-family: inherit;
+        font-size: 100%;
+        line-height: 1.15;
+        margin: 0;
+      }
+      button,
+      select {
+        text-transform: none;
+      }
+      button,
+      [type="button"],
+      [type="reset"],
+      [type="submit"] {
+        -webkit-appearance: button;
+      }
+      button::-moz-focus-inner,
+      [type="button"]::-moz-focus-inner,
+      [type="reset"]::-moz-focus-inner,
+      [type="submit"]::-moz-focus-inner {
+        border-style: none;
+        padding: 0;
+      }
+      button:-moz-focus,
+      [type="button"]:-moz-focus,
+      [type="reset"]:-moz-focus,
+      [type="submit"]:-moz-focus {
+        outline: 1px dotted ButtonText;
+      }
+      a {
+        color: inherit;
+        text-decoration: inherit;
+      }
+      input {
+        padding: 2px 4px;
+      }
+      img {
+        display: block;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style: normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
+      }
+    </style>
+    <link
+      rel="shortcut icon"
+      href="./assets/favicon.png"
+      type="icon/png"
+      sizes="32x32"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <!--This is the head section-->
+    <!-- <style> ... </style> -->
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  <body>
+    <div class="overlay" id="loading-screen">
+      <div class="loader"></div>
+    </div>
+    <div>
+      <link href="./styles/home.css" rel="stylesheet" />
+
+      <div id="home" class="home-container">
+        <header data-thq="thq-navbar" class="home-navbar">
+          <a href="#home" class="home-logo">Mavatar</a>
+          <div
+            data-thq="thq-navbar-nav"
+            data-role="Nav"
+            class="home-desktop-menu"
+          >
+            <nav
+              data-thq="thq-navbar-nav-links"
+              data-role="Nav"
+              class="home-nav"
+            >
+              <a href="#avatar" class="home-link button-clean button">
+                Create Avatar
+              </a>
+              <a href="#types" class="home-link01 button-clean button">
+                Avatar Types
+              </a>
+              <a
+                href="https://mindsdb.com/"
+                target="_blank"
+                rel="noreferrer noopener"
+                class="home-link02 button-clean button"
+              >
+                About MindsDB
+              </a>
+            </nav>
+          </div>
+          <div data-thq="thq-navbar-btn-group" class="home-btn-group">
+            <div class="home-socials">
+              <button class="social button">
+                <a
+                  href="https://github.com/Rutam21/Mavatar"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  <svg viewBox="0 0 950.8571428571428 1024" class="home-icon">
+                    <path
+                      d="M365.714 694.857c0 41.714-21.714 109.714-73.143 109.714s-73.143-68-73.143-109.714 21.714-109.714 73.143-109.714 73.143 68 73.143 109.714zM731.429 694.857c0 41.714-21.714 109.714-73.143 109.714s-73.143-68-73.143-109.714 21.714-109.714 73.143-109.714 73.143 68 73.143 109.714zM822.857 694.857c0-87.429-53.143-164.571-146.286-164.571-37.714 0-73.714 6.857-111.429 12-29.714 4.571-59.429 6.286-89.714 6.286s-60-1.714-89.714-6.286c-37.143-5.143-73.714-12-111.429-12-93.143 0-146.286 77.143-146.286 164.571 0 174.857 160 201.714 299.429 201.714h96c139.429 0 299.429-26.857 299.429-201.714zM950.857 594.286c0 63.429-6.286 130.857-34.857 189.143-75.429 152.571-282.857 167.429-431.429 167.429-150.857 0-370.857-13.143-449.143-167.429-29.143-57.714-35.429-125.714-35.429-189.143 0-83.429 22.857-162.286 77.714-226.286-10.286-31.429-15.429-64.571-15.429-97.143 0-42.857 9.714-85.714 29.143-124.571 90.286 0 148 39.429 216.571 93.143 57.714-13.714 117.143-20 176.571-20 53.714 0 108 5.714 160 18.286 68-53.143 125.714-91.429 214.857-91.429 19.429 38.857 29.143 81.714 29.143 124.571 0 32.571-5.143 65.143-15.429 96 54.857 64.571 77.714 144 77.714 227.429z"
+                    ></path>
+                  </svg>
+                </a>
+              </button>
+            </div>
+          </div>
+          <div data-thq="thq-burger-menu" class="home-burger-menu">
+            <button class="button home-button">
+              <svg viewBox="0 0 1024 1024" class="home-icon02">
+                <path
+                  d="M128 554.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 298.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 810.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
+                ></path>
+              </svg>
+            </button>
+          </div>
+          <div data-thq="thq-mobile-menu" class="home-mobile-menu">
+            <div
+              data-thq="thq-mobile-menu-nav"
+              data-role="Nav"
+              class="home-nav1"
+            >
+              <div class="home-container1">
+                <a href="#home" class="home-logo1">Mavatar</a>
+                <div data-thq="thq-close-menu" class="home-menu-close">
+                  <svg viewBox="0 0 1024 1024" class="home-icon04">
+                    <path
+                      d="M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+              <nav
+                data-thq="thq-mobile-menu-nav-links"
+                data-role="Nav"
+                class="home-nav2"
+              >
+                <a href="#avatar" class="home-link04">Create Avatar</a>
+                <a href="#types" class="home-link05"> Avatar Types </a>
+                <a
+                  href="https://openai.com/dall-e-2"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  class="home-link06"
+                >
+                  About MindsDB
+                </a>
+              </nav>
+              <div class="home-container2"></div>
+            </div>
+            <div class="home-icon-group">
+              <a
+                href="https://twitter.com/MindsDB"
+                target="_blank"
+                rel="noreferrer noopener"
+                class="home-link07"
+              >
+                <svg viewBox="0 0 950.8571428571428 1024" class="home-icon06">
+                  <path
+                    d="M925.714 233.143c-25.143 36.571-56.571 69.143-92.571 95.429 0.571 8 0.571 16 0.571 24 0 244-185.714 525.143-525.143 525.143-104.571 0-201.714-30.286-283.429-82.857 14.857 1.714 29.143 2.286 44.571 2.286 86.286 0 165.714-29.143 229.143-78.857-81.143-1.714-149.143-54.857-172.571-128 11.429 1.714 22.857 2.857 34.857 2.857 16.571 0 33.143-2.286 48.571-6.286-84.571-17.143-148-91.429-148-181.143v-2.286c24.571 13.714 53.143 22.286 83.429 23.429-49.714-33.143-82.286-89.714-82.286-153.714 0-34.286 9.143-65.714 25.143-93.143 90.857 112 227.429 185.143 380.571 193.143-2.857-13.714-4.571-28-4.571-42.286 0-101.714 82.286-184.571 184.571-184.571 53.143 0 101.143 22.286 134.857 58.286 41.714-8 81.714-23.429 117.143-44.571-13.714 42.857-42.857 78.857-81.143 101.714 37.143-4 73.143-14.286 106.286-28.571z"
+                  ></path>
+                </svg>
+              </a>
+              <a
+                href="https://mindsdb.com/joincommunity?_gl=1*s4n0v4*_ga*Nzk5MTE4MDYwLjE2ODgzOTAyNTk.*_ga_7LGFPGV6XV*MTY4ODY3NTQ3MS43LjEuMTY4ODY3NTUxMi4xOS4wLjA."
+                target="_blank"
+                rel="noreferrer noopener"
+                class="home-link08"
+              >
+                <svg viewBox="0 0 1024 1024" class="home-icon08">
+                  <path
+                    d="M618.667 469.333c29.44 0 56.149-11.947 75.435-31.232s31.232-45.995 31.232-75.435v-213.333c0-29.44-11.947-56.149-31.232-75.435s-45.995-31.232-75.435-31.232-56.149 11.947-75.435 31.232-31.232 45.995-31.232 75.435v213.333c0 29.44 11.947 56.149 31.232 75.435s45.995 31.232 75.435 31.232zM618.667 384c-5.973 0-11.264-2.347-15.104-6.229s-6.229-9.131-6.229-15.104v-213.333c0-5.973 2.347-11.264 6.229-15.104s9.131-6.229 15.104-6.229 11.264 2.347 15.104 6.229 6.229 9.131 6.229 15.104v213.333c0 5.973-2.347 11.264-6.229 15.104s-9.131 6.229-15.104 6.229zM874.667 469.333c29.44 0 56.149-11.947 75.435-31.232s31.232-45.995 31.232-75.435-11.947-56.149-31.232-75.435-45.995-31.232-75.435-31.232-56.149 11.947-75.435 31.232-31.232 45.995-31.232 75.435v64c0 23.552 19.115 42.667 42.667 42.667zM874.667 384h-21.333v-21.333c0-5.973 2.347-11.264 6.229-15.104s9.131-6.229 15.104-6.229 11.264 2.347 15.104 6.229 6.229 9.131 6.229 15.104-2.347 11.264-6.229 15.104-9.131 6.229-15.104 6.229zM405.333 554.667c-29.44 0-56.149 11.947-75.435 31.232s-31.232 45.995-31.232 75.435v213.333c0 29.44 11.947 56.149 31.232 75.435s45.995 31.232 75.435 31.232 56.149-11.947 75.435-31.232 31.232-45.995 31.232-75.435v-213.333c0-29.44-11.947-56.149-31.232-75.435s-45.995-31.232-75.435-31.232zM405.333 640c5.973 0 11.264 2.347 15.104 6.229s6.229 9.131 6.229 15.104v213.333c0 5.973-2.347 11.264-6.229 15.104s-9.131 6.229-15.104 6.229-11.264-2.347-15.104-6.229-6.229-9.131-6.229-15.104v-213.333c0-5.973 2.347-11.264 6.229-15.104s9.131-6.229 15.104-6.229zM149.333 554.667c-29.44 0-56.149 11.947-75.435 31.232s-31.232 45.995-31.232 75.435 11.947 56.149 31.232 75.435 45.995 31.232 75.435 31.232 56.149-11.947 75.435-31.232 31.232-45.995 31.232-75.435v-64c0-23.552-19.115-42.667-42.667-42.667zM149.333 640h21.333v21.333c0 5.973-2.347 11.264-6.229 15.104s-9.131 6.229-15.104 6.229-11.264-2.347-15.104-6.229-6.229-9.131-6.229-15.104 2.347-11.264 6.229-15.104 9.131-6.229 15.104-6.229zM554.667 618.667c0 29.44 11.947 56.149 31.232 75.435s45.995 31.232 75.435 31.232h213.333c29.44 0 56.149-11.947 75.435-31.232s31.232-45.995 31.232-75.435-11.947-56.149-31.232-75.435-45.995-31.232-75.435-31.232h-213.333c-29.44 0-56.149 11.947-75.435 31.232s-31.232 45.995-31.232 75.435zM640 618.667c0-5.973 2.347-11.264 6.229-15.104s9.131-6.229 15.104-6.229h213.333c5.973 0 11.264 2.347 15.104 6.229s6.229 9.131 6.229 15.104-2.347 11.264-6.229 15.104-9.131 6.229-15.104 6.229h-213.333c-5.973 0-11.264-2.347-15.104-6.229s-6.229-9.131-6.229-15.104zM661.333 853.333c5.973 0 11.264 2.347 15.104 6.229s6.229 9.131 6.229 15.104-2.347 11.264-6.229 15.104-9.131 6.229-15.104 6.229-11.264-2.347-15.104-6.229-6.229-9.131-6.229-15.104v-21.333zM661.333 768h-64c-23.552 0-42.667 19.115-42.667 42.667v64c0 29.44 11.947 56.149 31.232 75.435s45.995 31.232 75.435 31.232 56.149-11.947 75.435-31.232 31.232-45.995 31.232-75.435-11.947-56.149-31.232-75.435-45.995-31.232-75.435-31.232zM384 405.333c0 5.973-2.347 11.264-6.229 15.104s-9.131 6.229-15.104 6.229h-213.333c-5.973 0-11.264-2.347-15.104-6.229s-6.229-9.131-6.229-15.104 2.347-11.264 6.229-15.104 9.131-6.229 15.104-6.229h213.333c5.973 0 11.264 2.347 15.104 6.229s6.229 9.131 6.229 15.104zM469.333 405.333c0-29.44-11.947-56.149-31.232-75.435s-45.995-31.232-75.435-31.232h-213.333c-29.44 0-56.149 11.947-75.435 31.232s-31.232 45.995-31.232 75.435 11.947 56.149 31.232 75.435 45.995 31.232 75.435 31.232h213.333c29.44 0 56.149-11.947 75.435-31.232s31.232-45.995 31.232-75.435zM362.667 170.667c-5.973 0-11.264-2.347-15.104-6.229s-6.229-9.131-6.229-15.104 2.347-11.264 6.229-15.104 9.131-6.229 15.104-6.229 11.264 2.347 15.104 6.229 6.229 9.131 6.229 15.104v21.333zM362.667 256h64c23.552 0 42.667-19.115 42.667-42.667v-64c0-29.44-11.947-56.149-31.232-75.435s-45.995-31.232-75.435-31.232-56.149 11.947-75.435 31.232-31.232 45.995-31.232 75.435 11.947 56.149 31.232 75.435 45.995 31.232 75.435 31.232z"
+                  ></path>
+                </svg>
+              </a>
+              <a
+                href="https://github.com/mindsdb/mindsdb"
+                target="_blank"
+                rel="noreferrer noopener"
+                class="home-link09"
+              >
+                <svg viewBox="0 0 877.7142857142857 1024" class="home-icon10">
+                  <path
+                    d="M438.857 73.143c242.286 0 438.857 196.571 438.857 438.857 0 193.714-125.714 358.286-300 416.571-22.286 4-30.286-9.714-30.286-21.143 0-14.286 0.571-61.714 0.571-120.571 0-41.143-13.714-67.429-29.714-81.143 97.714-10.857 200.571-48 200.571-216.571 0-48-17.143-86.857-45.143-117.714 4.571-11.429 19.429-56-4.571-116.571-36.571-11.429-120.571 45.143-120.571 45.143-34.857-9.714-72.571-14.857-109.714-14.857s-74.857 5.143-109.714 14.857c0 0-84-56.571-120.571-45.143-24 60.571-9.143 105.143-4.571 116.571-28 30.857-45.143 69.714-45.143 117.714 0 168 102.286 205.714 200 216.571-12.571 11.429-24 30.857-28 58.857-25.143 11.429-89.143 30.857-127.429-36.571-24-41.714-67.429-45.143-67.429-45.143-42.857-0.571-2.857 26.857-2.857 26.857 28.571 13.143 48.571 64 48.571 64 25.714 78.286 148 52 148 52 0 36.571 0.571 70.857 0.571 81.714 0 11.429-8 25.143-30.286 21.143-174.286-58.286-300-222.857-300-416.571 0-242.286 196.571-438.857 438.857-438.857zM166.286 703.429c1.143-2.286-0.571-5.143-4-6.857-3.429-1.143-6.286-0.571-7.429 1.143-1.143 2.286 0.571 5.143 4 6.857 2.857 1.714 6.286 1.143 7.429-1.143zM184 722.857c2.286-1.714 1.714-5.714-1.143-9.143-2.857-2.857-6.857-4-9.143-1.714-2.286 1.714-1.714 5.714 1.143 9.143 2.857 2.857 6.857 4 9.143 1.714zM201.143 748.571c2.857-2.286 2.857-6.857 0-10.857-2.286-4-6.857-5.714-9.714-3.429-2.857 1.714-2.857 6.286 0 10.286s7.429 5.714 9.714 4zM225.143 772.571c2.286-2.286 1.143-7.429-2.286-10.857-4-4-9.143-4.571-11.429-1.714-2.857 2.286-1.714 7.429 2.286 10.857 4 4 9.143 4.571 11.429 1.714zM257.714 786.857c1.143-3.429-2.286-7.429-7.429-9.143-4.571-1.143-9.714 0.571-10.857 4s2.286 7.429 7.429 8.571c4.571 1.714 9.714 0 10.857-3.429zM293.714 789.714c0-4-4.571-6.857-9.714-6.286-5.143 0-9.143 2.857-9.143 6.286 0 4 4 6.857 9.714 6.286 5.143 0 9.143-2.857 9.143-6.286zM326.857 784c-0.571-3.429-5.143-5.714-10.286-5.143-5.143 1.143-8.571 4.571-8 8.571 0.571 3.429 5.143 5.714 10.286 4.571s8.571-4.571 8-8z"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </header>
+        <section class="home-hero">
+          <div class="home-heading">
+            <h1 class="home-header">
+              <span>Create your AI</span>
+              <br />
+              <span>Avatar Now!</span>
+              <br />
+              <br />
+            </h1>
+            <p class="home-caption">AI Generated Avatars powered by MindsDB</p>
+          </div>
+          <div class="home-buttons">
+            <a href="#avatar" class="home-view button">Create your Avatar</a>
+          </div>
+        </section>
+        <section class="home-description">
+          <div class="home-character">
+            <img
+              alt="image"
+              src="./assets/clone x 9-300h.png"
+              class="home-image"
+            />
+            <img
+              alt="image"
+              src="./assets/clone x 11-300h.png"
+              class="home-image01"
+            />
+            <img
+              alt="image"
+              src="./assets/clone x 7-300h.png"
+              class="home-image02"
+            />
+            <img
+              alt="image"
+              src="./assets/clone x 10-300h.png"
+              class="home-image03"
+            />
+            <img
+              alt="image"
+              src="./assets/clone x 6-300h.png"
+              class="home-image04"
+            />
+            <img
+              alt="image"
+              src="./assets/clone x 3-300h.png"
+              class="home-image05"
+            />
+          </div>
+        </section>
+        <section class="home-cards">
+          <div id="avatar" class="home-card">
+            <div class="home-row">
+              <div class="home-main">
+                <div class="home-content">
+                  <div class="home-container3">
+                    <h1 class="home-text05">Tokens:&nbsp;</h1>
+                    <h1 class="home-text06" id="count"></h1>
+                  </div>
+                  <h1 class="home-header1">Enter a Prompt for your Avatar</h1>
+                  <p class="home-description1">
+                    Simply describe here how you want your avatar to look like
+                    and our underlying AI will do the rest for and generate you
+                    an amazing Avatar.
+                  </p>
+                  <form
+                    class="home-form"
+                    onsubmit="return checkFormInputs(this) && handleAvatar(event)"
+                  >
+                    <input
+                      type="text"
+                      id="avatarInput"
+                      required=""
+                      placeholder="Type a description for your Avatar."
+                      class="home-textinput input"
+                    />
+                    <select id="typeInput" required="" class="home-select">
+                      <option value="Random Art" selected="">
+                        Select a Type
+                      </option>
+                      <option value="Pixel Art">Pixel Art</option>
+                      <option value="Modern Art">Modern Art</option>
+                      <option value="Oil">Oil</option>
+                      <option value="Acrylic">Acrylic</option>
+                      <option value="Watercolor">Watercolor</option>
+                      <option value="Gouache">Gouache</option>
+                      <option value="Pastel">Pastel</option>
+                      <option value="Encaustic">Encaustic</option>
+                      <option value="Fresco">Fresco</option>
+                      <option value="Spray Paint">Spray Paint</option>
+                      <option value="Ink Wash">Ink Wash</option>
+                      <option value="Tempera Paint">Tempera Paint</option>
+                      <option value="Enamel">Enamel</option>
+                      <option value="Van Gogh">Van Gogh</option>
+                      <option value="Pop Art">Pop Art</option>
+                      <option value="3D">3D</option>
+                    </select>
+                    <button type="submit" class="home-button1 button">
+                      Generate
+                    </button>
+                  </form>
+                </div>
+                <div class="home-container4" id="avatarDiv">
+                  <div class="home-container5">
+                    <img
+                      id="avatarResult"
+                      alt="image"
+                      src=""
+                      class="home-image06"
+                    />
+                    <button
+                      id="avatarClose"
+                      type="button"
+                      class="home-button2 button"
+                    >
+                      <svg
+                        viewBox="0 0 804.5714285714286 1024"
+                        class="home-icon12"
+                      >
+                        <path
+                          d="M741.714 755.429c0 14.286-5.714 28.571-16 38.857l-77.714 77.714c-10.286 10.286-24.571 16-38.857 16s-28.571-5.714-38.857-16l-168-168-168 168c-10.286 10.286-24.571 16-38.857 16s-28.571-5.714-38.857-16l-77.714-77.714c-10.286-10.286-16-24.571-16-38.857s5.714-28.571 16-38.857l168-168-168-168c-10.286-10.286-16-24.571-16-38.857s5.714-28.571 16-38.857l77.714-77.714c10.286-10.286 24.571-16 38.857-16s28.571 5.714 38.857 16l168 168 168-168c10.286-10.286 24.571-16 38.857-16s28.571 5.714 38.857 16l77.714 77.714c10.286 10.286 16 24.571 16 38.857s-5.714 28.571-16 38.857l-168 168 168 168c10.286 10.286 16 24.571 16 38.857z"
+                        ></path>
+                      </svg>
+                    </button>
+                  </div>
+                  <button
+                    type="button"
+                    id="downloadAvatar"
+                    class="home-button3 button"
+                  >
+                    Download Avatar
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="types" class="home-collection">
+          <div class="home-content01">
+            <span class="home-caption01">Avatar types</span>
+            <div class="home-heading1">
+              <h2 class="home-header2">
+                Not sure about a specific Avatar Type?
+              </h2>
+              <p class="home-header3">
+                Well, feel free to check out the gallery below that showcases
+                different types of avatars made with simple prompts.
+              </p>
+            </div>
+          </div>
+          <div class="home-main1">
+            <div class="home-card01 card">
+              <div class="home-image07">
+                <img
+                  alt="image"
+                  src="./assets/pixel.png"
+                  class="home-image08"
+                />
+              </div>
+              <div class="home-content02">
+                <span class="home-caption02">Pixel Art</span>
+                <h3 class="home-title">
+                  Cool Boy with a cowboy hat and goggles
+                </h3>
+              </div>
+            </div>
+            <div class="home-card02 card">
+              <div class="home-image09">
+                <img
+                  alt="image"
+                  src="./assets/modern.png"
+                  class="home-image10"
+                />
+              </div>
+              <div class="home-content03">
+                <span class="home-caption03">Modern Art</span>
+                <h3 class="home-title01">Cool Girl with goggles</h3>
+              </div>
+            </div>
+            <div class="home-card03 card">
+              <div class="home-image11">
+                <img alt="image" src="./assets/oil.png" class="home-image12" />
+              </div>
+              <div class="home-content04">
+                <span class="home-caption04">Oil Painting</span>
+                <h3 class="home-title02">
+                  Stylish boy with light beard and headphones
+                </h3>
+              </div>
+            </div>
+            <div class="home-card04 card">
+              <div class="home-image13">
+                <img
+                  alt="image"
+                  src="./assets/pastel.png"
+                  class="home-image14"
+                />
+              </div>
+              <div class="home-content05">
+                <span class="home-caption05">
+                  <span>Pastel</span>
+                  <br />
+                </span>
+                <h3 class="home-title03">Adult Fantasy Man with a Cigar</h3>
+              </div>
+            </div>
+            <div class="home-card05 card hidden">
+              <div class="home-image15">
+                <img
+                  alt="image"
+                  src="./assets/acrylic.png"
+                  class="home-image16"
+                />
+              </div>
+              <div class="home-content06">
+                <span class="home-caption06">Acrylic</span>
+                <h3 class="home-title04">Urban girl with bandana</h3>
+              </div>
+            </div>
+            <div class="home-card06 card hidden">
+              <div class="home-image17">
+                <img
+                  alt="image"
+                  src="./assets/watercolor.png"
+                  class="home-image18"
+                />
+              </div>
+              <div class="home-content07">
+                <span class="home-caption07">Watercolor</span>
+                <h3 class="home-title05">
+                  Indian boy with a head band and ear rings
+                </h3>
+              </div>
+            </div>
+            <div class="home-card07 card hidden">
+              <div class="home-image19">
+                <img
+                  alt="image"
+                  src="./assets/encaustic.png"
+                  class="home-image20"
+                />
+              </div>
+              <div class="home-content08">
+                <span class="home-caption08">Encaustic</span>
+                <h3 class="home-title06">Fantasy Empress with a crown</h3>
+              </div>
+            </div>
+            <div class="home-card08 card hidden">
+              <div class="home-image21">
+                <img alt="image" src="./assets/pop.png" class="home-image22" />
+              </div>
+              <div class="home-content09">
+                <span class="home-caption09">Pop Art</span>
+                <h3 class="home-title07">Badass Male Spy with Eye Patch</h3>
+              </div>
+            </div>
+            <div class="home-card09 card hidden">
+              <div class="home-image23">
+                <img
+                  alt="image"
+                  src="./assets/enamel.png"
+                  class="home-image24"
+                />
+              </div>
+              <div class="home-content10">
+                <span class="home-caption10">Enamel</span>
+                <h3 class="home-title08">
+                  Confident Lady with stitches on Forehead
+                </h3>
+              </div>
+            </div>
+            <div class="home-card10 card hidden">
+              <div class="home-image25">
+                <img
+                  alt="image"
+                  src="./assets/tempera.png"
+                  class="home-image26"
+                />
+              </div>
+              <div class="home-content11">
+                <span class="home-caption11">Tempera Painting</span>
+                <h3 class="home-title09">
+                  Bully Boy with Sunglasses and gold chain
+                </h3>
+              </div>
+            </div>
+            <div class="home-card11 card hidden">
+              <div class="home-image27">
+                <img
+                  alt="image"
+                  src="./assets/fresco.png"
+                  class="home-image28"
+                />
+              </div>
+              <div class="home-content12">
+                <span class="home-caption12">Fresco</span>
+                <h3 class="home-title10">
+                  Wise Owl with a monocular on its left eye
+                </h3>
+              </div>
+            </div>
+            <div class="home-card12 card hidden">
+              <div class="home-image29">
+                <img
+                  alt="image"
+                  src="./assets/spray.png"
+                  class="home-image30"
+                />
+              </div>
+              <div class="home-content13">
+                <span class="home-caption13">Spray Paint</span>
+                <h3 class="home-title11">
+                  A powerful and deadly pirate in red background
+                </h3>
+              </div>
+            </div>
+            <div class="home-card13 card hidden">
+              <div class="home-image31">
+                <img
+                  alt="image"
+                  src="./assets/gouache.png"
+                  class="home-image32"
+                />
+              </div>
+              <div class="home-content14">
+                <span class="home-caption14">Gouache</span>
+                <h3 class="home-title12">A rabbit with a helmet</h3>
+              </div>
+            </div>
+            <div class="home-card14 card hidden">
+              <div class="home-image33">
+                <img alt="image" src="./assets/ink.png" class="home-image34" />
+              </div>
+              <div class="home-content15">
+                <span class="home-caption15">Ink Wash</span>
+                <h3 class="home-title13">A fierce tiger with Sunglasses</h3>
+              </div>
+            </div>
+            <div class="home-card15 card hidden">
+              <div class="home-image35">
+                <img alt="image" src="./assets/van.png" class="home-image36" />
+              </div>
+              <div class="home-content16">
+                <span class="home-caption16">Van Gogh</span>
+                <h3 class="home-title14">
+                  A charming boy with a turban and medium beard
+                </h3>
+              </div>
+            </div>
+            <div class="home-card16 card hidden">
+              <div class="home-image37">
+                <img alt="image" src="./assets/3D.png" class="home-image38" />
+              </div>
+              <div class="home-content17">
+                <span class="home-caption17">3D</span>
+                <h3 class="home-title15">
+                  Cute Mickey Mouse with headphones and eye lens
+                </h3>
+              </div>
+            </div>
+          </div>
+          <button id="viewMoreButton" class="home-view1 button-link button">
+            <span class="home-text07">View More</span>
+            <svg viewBox="0 0 1024 1024" class="home-icon14">
+              <path
+                d="M961.714 461.714l-424 423.429c-14.286 14.286-37.143 14.286-51.429 0l-424-423.429c-14.286-14.286-14.286-37.714 0-52l94.857-94.286c14.286-14.286 37.143-14.286 51.429 0l303.429 303.429 303.429-303.429c14.286-14.286 37.143-14.286 51.429 0l94.857 94.286c14.286 14.286 14.286 37.714 0 52z"
+              ></path>
+            </svg>
+            <span class="home-text08">View Less</span>
+            <svg viewBox="0 0 1024 1024" class="home-icon16">
+              <path
+                d="M961.714 760.571l-94.857 94.286c-14.286 14.286-37.143 14.286-51.429 0l-303.429-303.429-303.429 303.429c-14.286 14.286-37.143 14.286-51.429 0l-94.857-94.286c-14.286-14.286-14.286-37.714 0-52l424-423.429c14.286-14.286 37.143-14.286 51.429 0l424 423.429c14.286 14.286 14.286 37.714 0 52z"
+              ></path>
+            </svg>
+          </button>
+        </section>
+        <footer class="home-footer">
+          <span class="home-copyright">
+            <span>© 2023 Mavatar. Designed by</span>
+            <a
+              href="https://twitter.com/RutamHere"
+              target="_blank"
+              rel="noreferrer noopener"
+              class="home-link10"
+            >
+              Rutam
+            </a>
+            <span>. All Rights Reserved.</span>
+          </span>
+        </footer>
+      </div>
+    </div>
+    <script
+      data-section-id="navbar"
+      src="https://unpkg.com/@teleporthq/teleport-custom-scripts"
+    ></script>
+    <script data-section-id="navbar" src="./scripts/avatar.js"></script>
+    <script data-section-id="navbar" src="./scripts/collection.js"></script>
+    <script data-section-id="navbar" src="./scripts/avatarCount.js"></script>
+    <script data-section-id="navbar" src="./scripts/validate.js"></script>
+  </body>
+</html>
